@@ -88,9 +88,8 @@ public class RegistrationPage {
         clickButtonSubmit.click();
         return this;
     }
-    public RegistrationPage checkResultNegative() {
+    public void checkResultNegative() {
         checkError.shouldNotHave((text("Thanks for submitting the form")));
-        return this;
     }
     public RegistrationPage checkOneResult(String key, String value) {
         checkOneResult.$(byText(key)).parent().shouldHave(text(value));
