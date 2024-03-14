@@ -7,47 +7,47 @@ import static tests.utils.RandomUtils.*;
 
 public class PracticeFormPOWithTDGTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
-    RandomUtils RandomUtils = new RandomUtils();
+    RandomUtils randomUtils = new RandomUtils();
     @Test
     void positiveRegistrationTest() {
         registrationPage.openPage()
-                .setFirstName(RandomUtils.firstName)
-                .setLastName(RandomUtils.lastName)
-                .setUserEmail(RandomUtils.userEmail)
-                .setUserGender(RandomUtils.userGender)
-                .setUserNumber(RandomUtils.userNumber)
-                .setUserDateOfBirth(RandomUtils.userBirthDay, RandomUtils.userBirthMonth, RandomUtils.userBirthYear)
-                .setUserSubjects(RandomUtils.userSubjects)
-                .setUserHobbies(RandomUtils.userHobbies)
-                .upLoadUserPicture(RandomUtils.userPicture)
-                .setUserAdress(RandomUtils.userAddress)
+                .setFirstName(randomUtils.firstName)
+                .setLastName(randomUtils.lastName)
+                .setUserEmail(randomUtils.userEmail)
+                .setUserGender(randomUtils.userGender)
+                .setUserNumber(randomUtils.userNumber)
+                .setUserDateOfBirth(randomUtils.userBirthDay, randomUtils.userBirthMonth, randomUtils.userBirthYear)
+                .setUserSubjects(randomUtils.userSubjects)
+                .setUserHobbies(randomUtils.userHobbies)
+                .upLoadUserPicture(randomUtils.userPicture)
+                .setUserAdress(randomUtils.userAddress)
                 .setUserState(userState)
                 .setUserCity(userCity)
                 .clickSubmit()
-                .checkResultComponent(RandomUtils.firstName + ' ' + RandomUtils.lastName,
-                        RandomUtils.userEmail,
-                        RandomUtils.userGender,
-                        RandomUtils.userNumber,
-                        RandomUtils.userBirthDay + ' ' + RandomUtils.userBirthMonth + ','
-                                                       + RandomUtils.userBirthYear,
-                        RandomUtils.userSubjects,
-                        RandomUtils.userHobbies,
-                        RandomUtils.userPicture,
-                        RandomUtils.userAddress,
+                .checkResultComponent(randomUtils.firstName + ' ' + randomUtils.lastName,
+                        randomUtils.userEmail,
+                        randomUtils.userGender,
+                        randomUtils.userNumber,
+                        randomUtils.userBirthDay + ' ' + randomUtils.userBirthMonth + ','
+                                                       + randomUtils.userBirthYear,
+                        randomUtils.userSubjects,
+                        randomUtils.userHobbies,
+                        randomUtils.userPicture,
+                        randomUtils.userAddress,
                         userState + ' ' + userCity);
     }
     @Test
     void negativeRegistrationTest() {
         registrationPage.openPage()
-                .setLastName(RandomUtils.lastName)
-                .setUserEmail(RandomUtils.userEmail)
-                .setUserGender(RandomUtils.userGender)
-                .setUserNumber(RandomUtils.userNumber)
-                .setUserDateOfBirth(RandomUtils.userBirthDay, RandomUtils.userBirthMonth, RandomUtils.userBirthYear)
-                .setUserSubjects(RandomUtils.userSubjects)
-                .setUserHobbies(RandomUtils.userHobbies)
-                .upLoadUserPicture(RandomUtils.userPicture)
-                .setUserAdress(RandomUtils.userAddress)
+                .setLastName(randomUtils.lastName)
+                .setUserEmail(randomUtils.userEmail)
+                .setUserGender(randomUtils.userGender)
+                .setUserNumber(randomUtils.userNumber)
+                .setUserDateOfBirth(randomUtils.userBirthDay, randomUtils.userBirthMonth, randomUtils.userBirthYear)
+                .setUserSubjects(randomUtils.userSubjects)
+                .setUserHobbies(randomUtils.userHobbies)
+                .upLoadUserPicture(randomUtils.userPicture)
+                .setUserAdress(randomUtils.userAddress)
                 .setUserState(userState)
                 .setUserCity(userCity)
                 .clickSubmit()
@@ -56,16 +56,16 @@ public class PracticeFormPOWithTDGTest extends TestBase {
     @Test
     void requiredFieldsRegistrationTest() {
         registrationPage.openPage()
-                .setFirstName(RandomUtils.firstName)
-                .setLastName(RandomUtils.lastName)
-                .setUserGender(RandomUtils.userGender)
-                .setUserNumber(RandomUtils.userNumber)
-                .setUserDateOfBirth(RandomUtils.userBirthDay, RandomUtils.userBirthMonth, RandomUtils.userBirthYear)
+                .setFirstName(randomUtils.firstName)
+                .setLastName(randomUtils.lastName)
+                .setUserGender(randomUtils.userGender)
+                .setUserNumber(randomUtils.userNumber)
+                .setUserDateOfBirth(randomUtils.userBirthDay, randomUtils.userBirthMonth, randomUtils.userBirthYear)
                 .clickSubmit()
-                .checkOneResult("Student Name", RandomUtils.firstName + ' ' + RandomUtils.lastName)
-                .checkOneResult("Gender", RandomUtils.userGender)
-                .checkOneResult("Mobile", RandomUtils.userNumber)
-                .checkOneResult("Date of Birth", RandomUtils.userBirthDay + ' ' + RandomUtils.userBirthMonth + ','
-                                                                                + RandomUtils.userBirthYear);
+                .checkOneResult("Student Name", randomUtils.firstName + ' ' + randomUtils.lastName)
+                .checkOneResult("Gender", randomUtils.userGender)
+                .checkOneResult("Mobile", randomUtils.userNumber)
+                .checkOneResult("Date of Birth", randomUtils.userBirthDay + ' ' + randomUtils.userBirthMonth + ','
+                                                                                + randomUtils.userBirthYear);
     }
 }
